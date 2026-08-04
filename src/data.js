@@ -355,7 +355,7 @@ export const socialLinks = [
   {
     id: "linkedin",
     name: "LinkedIn",
-    url: https://www.linkedin.com/in/bayu-alfatir-292963327?utm_source=share_via&utm_content=profile&utm_medium=member_android,
+    url: "https://www.linkedin.com/in/bayu-alfatir-292963327?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     icon: "Linkedin",
     color: "#0A66C2",
   },
@@ -369,7 +369,7 @@ export const socialLinks = [
   {
     id: "instagram",
     name: "Instagram",
-    url: https://www.instagram.com/bsfuib?igsh=cHZzYnF4ejA5ZXBz,
+    url: "https://www.instagram.com/bsfuib?igsh=cHZzYnF4ejA5ZXBz",
     icon: "Instagram",
     color: "#E4405F",
   },
