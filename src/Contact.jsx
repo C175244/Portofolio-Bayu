@@ -74,14 +74,15 @@ export default function Contact() {
                 className="card-nvidia p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors"
               >
                 <div
-                  className="w-10 h-10 flex items-center justify-center rounded-nvidia text-white transition-transform group-hover:scale-110"
+                  className="w-10 h-10 flex items-center justify-center rounded-nvidia text-white transition-transform group-hover:scale-110 flex-shrink-0"
                   style={{ backgroundColor: social.color }}
                 >
                   {getIcon(social.icon)}
                 </div>
-                <div>
-                  <p className="text-nvidia-ink text-sm font-bold">{social.name}</p>
-                  <p className="text-nvidia-mute text-xs">{social.id === 'email' ? profile.email : social.id === 'whatsapp' ? profile.whatsapp : social.url.replace('https://', '')}</p>
+                {/* Bagian teks yang dirapikan */}
+                <div className="min-w-0">
+                  <p className="text-nvidia-ink text-sm font-bold truncate">{social.name}</p>
+                  <p className="text-nvidia-mute text-xs truncate">{social.displayText}</p>
                 </div>
               </a>
             ))}
