@@ -348,7 +348,7 @@ export const socialLinks = [
   {
     id: "email",
     name: "Email",
-    url: `mailto:${bayualfatir89@gmail.com}`,
+    url: "mailto:bayualfatir89@gmail.com",
     icon: "Mail",
     color: "#EA4335",
   },
