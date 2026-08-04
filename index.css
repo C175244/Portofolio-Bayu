@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    @apply bg-nvidia-canvas text-nvidia-body antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-nvidia-green text-nvidia-ink font-bold text-base leading-tight px-6 py-[11px] h-11 rounded-nvidia transition-colors hover:bg-nvidia-green-dark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center bg-transparent text-nvidia-ink font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border-2 border-nvidia-green transition-colors hover:bg-nvidia-green/10;
+  }
+
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center bg-transparent text-nvidia-on-dark font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border border-nvidia-on-dark transition-colors hover:bg-white/10;
+  }
+
+  .card-nvidia {
+    @apply bg-nvidia-canvas border border-nvidia-hairline rounded-nvidia p-6 relative;
+  }
+
+  .card-nvidia-dark {
+    @apply bg-nvidia-surface-elevated border border-nvidia-hairline-strong rounded-nvidia p-6 relative;
+  }
+
+  .corner-square {
+    @apply absolute w-3 h-3 bg-nvidia-green;
+  }
+
+  .section-padding {
+    @apply py-16 px-6 lg:px-12;
+  }
+
+  .container-nvidia {
+    @apply max-w-[1280px] mx-auto;
+  }
+}
