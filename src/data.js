@@ -348,21 +348,14 @@ export const socialLinks = [
   {
     id: "email",
     name: "Email",
-    url: `mailto:${profile.email}`,
+    url: `mailto:${bayualfatir89@gmail.com}`,
     icon: "Mail",
     color: "#EA4335",
   },
   {
-    id: "whatsapp",
-    name: "WhatsApp",
-    url: `https://wa.me/${profile.whatsapp.replace(/\+/g, "")}`,
-    icon: "MessageCircle",
-    color: "#25D366",
-  },
-  {
     id: "linkedin",
     name: "LinkedIn",
-    url: profile.linkedin,
+    url: https://www.linkedin.com/in/bayu-alfatir-292963327?utm_source=share_via&utm_content=profile&utm_medium=member_android,
     icon: "Linkedin",
     color: "#0A66C2",
   },
@@ -376,7 +369,7 @@ export const socialLinks = [
   {
     id: "instagram",
     name: "Instagram",
-    url: profile.instagram,
+    url: https://www.instagram.com/bsfuib?igsh=cHZzYnF4ejA5ZXBz,
     icon: "Instagram",
     color: "#E4405F",
   },
