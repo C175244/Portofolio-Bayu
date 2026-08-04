@@ -364,7 +364,8 @@ export const socialLinks = [
   {
     id: "github",
     name: "GitHub",
-    url: profile.github,
+    url: "https://github.com/C175244",
+    displayText: "github/BayuAlfatir", 
     icon: "Github",
     color: "#181717",
   },
