@@ -50,13 +50,13 @@ export default function Hero() {
               <h1 className="text-nvidia-on-dark text-4xl md:text-5xl lg:text-[48px] font-bold leading-[1.25]">
                 {profile.name}
               </h1>
-              <p className="text-nvidia-green text-2xl md:text-3xl lg:text-[36px] font-bold leading-[1.25]">
+              <p className="text-nvidia-green text-2xl md:text-3xl lg:text-[36px] font-bold leading-[1.25] text-glow-green">
                 {t.tagline}
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-nvidia-on-dark-mute text-base leading-relaxed max-w-lg">
+            <p className="text-gray-300 text-base leading-relaxed max-w-lg">
               {t.description}
             </p>
 
