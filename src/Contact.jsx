@@ -85,10 +85,6 @@ export default function Contact() {
           {social.id === 'email' ? profile.email : social.url.replace('https://', '')}
         </p>
       </div>
-    </a>
-  ))}
-</div>
-
                 {/* Bagian teks yang dirapikan */}
                 <div className="min-w-0">
                   <p className="text-nvidia-ink text-sm font-bold truncate">{social.name}</p>
