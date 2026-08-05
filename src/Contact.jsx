@@ -12,30 +12,30 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-nvidia-canvas section-padding">
+    <section id="contact" className="bg-white section-padding">
       <div className="container-nvidia">
         {/* Section Header */}
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-3 h-3 bg-nvidia-green" />
-            <span className="text-nvidia-mute text-sm font-bold uppercase tracking-wide">
+            <span className="text-gray-500 text-sm font-bold uppercase tracking-wide">
               {t.eyebrow}
             </span>
             <div className="w-3 h-3 bg-nvidia-green" />
           </div>
-          <h2 className="text-nvidia-ink text-3xl md:text-[36px] font-bold leading-[1.25] mb-4">
+          <h2 className="text-gray-900 text-3xl md:text-[36px] font-bold leading-[1.25] mb-4">
             {t.title}
           </h2>
-          <p className="text-nvidia-body text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
             {t.description}
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
           {/* Profile Card */}
-          <div className="card-nvidia p-8 mb-8 text-center">
-            <div className="corner-square top-0 left-0" />
-            <div className="corner-square bottom-0 right-0" />
+          <div className="card-nvidia bg-gray-50 border border-gray-200 shadow-sm p-8 mb-8 text-center relative">
+            <div className="corner-square top-0 left-0 bg-nvidia-green" />
+            <div className="corner-square bottom-0 right-0 bg-nvidia-green" />
 
             <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-nvidia-green">
               <img
@@ -48,19 +48,19 @@ export default function Contact() {
               />
             </div>
 
-            <h3 className="text-nvidia-ink text-xl font-bold mb-1">
+            <h3 className="text-gray-900 text-xl font-bold mb-1">
               {profile.name}
             </h3>
             <p className="text-nvidia-green text-base font-bold mb-2">
               {profile.title}
             </p>
-            <p className="text-nvidia-mute text-sm">
+            <p className="text-gray-500 text-sm">
               {profile.location}
             </p>
           </div>
 
           {/* Social Links Grid */}
-          <h3 className="text-nvidia-ink text-lg font-bold mb-6 text-center">
+          <h3 className="text-gray-900 text-lg font-bold mb-6 text-center">
             {t.connectTitle}
           </h3>
 
@@ -71,18 +71,17 @@ export default function Contact() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-nvidia p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors"
+                className="card-nvidia bg-white border border-gray-200 shadow-sm p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors"
               >
                 <div
-                  className="w-10 h-10 flex items-center justify-center rounded-nvidia text-white transition-transform group-hover:scale-110 flex-shrink-0"
+                  className="w-10 h-10 flex items-center justify-center rounded-md text-white transition-transform group-hover:scale-110 flex-shrink-0"
                   style={{ backgroundColor: social.color }}
                 >
                   {getIcon(social.icon)}
                 </div>
-                {/* Bagian teks yang dirapikan */}
                 <div className="min-w-0">
-                  <p className="text-nvidia-ink text-sm font-bold truncate">{social.name}</p>
-                  <p className="text-nvidia-mute text-xs truncate">{social.displayText}</p>
+                  <p className="text-gray-900 text-sm font-bold truncate">{social.name}</p>
+                  <p className="text-gray-500 text-xs truncate">{social.displayText}</p>
                 </div>
               </a>
             ))}
