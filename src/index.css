@@ -46,3 +46,9 @@
     @apply max-w-[1280px] mx-auto;
   }
 }
+@layer utilities {
+  .text-glow-green {
+    color: #9fe530;
+    text-shadow: 0 0 8px rgba(118,185,0,0.4);
+  }
+}
