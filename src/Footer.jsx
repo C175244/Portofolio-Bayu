@@ -1,5 +1,5 @@
 import { useLanguage } from './LanguageContext';
-import { translations, profile } from './data';
+import { translations, profile, socialLinks } from './data';
 import { ArrowUp } from 'lucide-react';
 
 export default function Footer() {
@@ -23,8 +23,6 @@ export default function Footer() {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
-
-  const waNumber = profile.whatsapp.replace(/\+/g, '');
 
   return (
     <footer className="bg-[#050505]">
@@ -68,31 +66,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info (Sync dengan Social Links di Data) */}
           <div>
             <h4 className="text-white text-base font-bold mb-4">
               {lang === 'id' ? 'Kontak' : 'Contact'}
             </h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="text-gray-300 text-[15px] hover:text-nvidia-green transition-colors"
-                >
-                  {profile.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`https://wa.me/${waNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 text-[15px] hover:text-nvidia-green transition-colors"
-                >
-                  {profile.whatsapp}
-                </a>
-              </li>
-              <li className="text-gray-300 text-[15px]">
+            <ul className="space-y-3">
+              {socialLinks.map((social) => (
+                <li key={social.id}>
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 text-[15px] hover:text-nvidia-green transition-colors block"
+                  >
+                    {social.name}
+                  </a>
+                </li>
+              ))}
+              <li className="text-gray-500 text-[15px] pt-2 mt-2 border-t border-gray-800">
                 {profile.location}
               </li>
             </ul>
