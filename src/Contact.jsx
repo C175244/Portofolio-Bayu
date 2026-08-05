@@ -1,10 +1,12 @@
 import { useLanguage } from './LanguageContext';
 import { socialLinks, profile, translations } from './data';
 import * as Icons from 'lucide-react';
+import { useInView } from './hooks/useInView';
 
 export default function Contact() {
   const { lang } = useLanguage();
   const t = translations[lang].contact;
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   const getIcon = (iconName) => {
     const IconComponent = Icons[iconName];
@@ -12,7 +14,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24">
+    <section
+      id="contact"
+      ref={ref}
+      className={`bg-white py-16 md:py-24 fade-up ${inView ? 'visible' : ''}`}
+    >
       <div className="container-nvidia px-6 lg:px-12">
         <div className="mb-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -32,12 +38,11 @@ export default function Contact() {
 
         <div className="max-w-3xl mx-auto">
           {/* Profile Card */}
-          <div className="card-nvidia bg-gray-50 border border-gray-200 shadow-sm p-8 mb-8 text-center relative rounded-md">
+          <div className="card-nvidia bg-gray-50 border border-gray-200 shadow-sm p-8 mb-8 text-center relative rounded-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div className="absolute top-0 left-0 w-3 h-3 bg-nvidia-green" />
             <div className="absolute bottom-0 right-0 w-3 h-3 bg-nvidia-green" />
 
-            <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-nvidia-green">
-              {/* INI JUGA DIBENERIN BIAR FOTO KAMU MUNCUL DI SINI */}
+            <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-nvidia-green hover:scale-105 transition-transform duration-300">
               <img
                 src="./foto-profil.jpg"
                 alt={profile.name}
@@ -63,17 +68,17 @@ export default function Contact() {
             {t.connectTitle}
           </h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children visible">
             {socialLinks.map((social) => (
               <a
                 key={social.id}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-nvidia bg-white border border-gray-200 shadow-sm p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors rounded-md"
+                className="card-nvidia bg-white border border-gray-200 shadow-sm p-5 flex items-center gap-4 group hover:border-nvidia-green hover:shadow-lg hover:-translate-y-1 transition-all duration-300 rounded-md"
               >
                 <div
-                  className="w-10 h-10 flex items-center justify-center rounded-md text-white transition-transform group-hover:scale-110 flex-shrink-0"
+                  className="w-10 h-10 flex items-center justify-center rounded-md text-white transition-transform duration-300 group-hover:scale-110 flex-shrink-0"
                   style={{ backgroundColor: social.color }}
                 >
                   {getIcon(social.icon)}
