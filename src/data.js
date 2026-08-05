@@ -13,14 +13,102 @@ export const profile = {
   status: "Pelajar di SMAN 104 Jakarta",
   location: "Ciracas, Jakarta Timur, Indonesia",
   careerFocus: "AI Engineer",
-  email: "bayu.alfatir@email.com",
-  whatsapp: "+6281234567890",
-  linkedin: "https://linkedin.com/in/bayualfatir",
-  github: "https://github.com/bayualfatir",
-  instagram: "https://instagram.com/bayualfatir",
+  email: "bayualfatir89@gmail.com",
+  linkedin: "https://www.linkedin.com/in/bayu-alfatir-292963327",
+  github: "https://github.com/C175244",
+  instagram: "https://www.instagram.com/bsfuib",
   // Ganti URL di bawah ini dengan link foto profilmu
   photoUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
 };
+
+// ============================================================
+// DATA PORTOFOLIO & SERTIFIKAT (Ditaruh di atas agar bisa dihitung otomatis)
+// ============================================================
+
+export const portfolioData = [
+  {
+    id: 1,
+    title: "DompetKu",
+    titleEn: "DompetKu",
+    description:
+      "Aplikasi manajemen keuangan pribadi berbasis mobile. Membantu pengguna melacak pemasukan, pengeluaran, dan menyusun anggaran harian dengan antarmuka yang intuitif.",
+    descriptionEn:
+      "A personal finance management mobile application. Helps users track income, expenses, and plan daily budgets with an intuitive interface.",
+    status: "draft",
+    tags: ["React Native", "Firebase", "Mobile App"],
+    image:
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+    github: null,
+    demo: null,
+    note: "Aplikasi native yang masih dalam tahap pengembangan. Belum di-hosting.",
+    noteEn: "Native application still in development. Not yet hosted.",
+  },
+  {
+    id: 2,
+    title: "Laporan Reaksi Kimia",
+    titleEn: "Chemical Reaction Report",
+    description:
+      "Proyek akademik berupa laporan ilmiah mendalam tentang berbagai reaksi kimia organik dan anorganik. Disusun dengan format penelitian yang rapi dan referensi yang kuat.",
+    descriptionEn:
+      "An academic project in the form of an in-depth scientific report on various organic and inorganic chemical reactions. Compiled with neat research formatting and strong references.",
+    status: "completed",
+    tags: ["Chemistry", "Research", "Academic"],
+    image:
+      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
+    github: null,
+    demo: null,
+    note: "Proyek sekolah yang telah diselesaikan dan dipresentasikan.",
+    noteEn: "School project that has been completed and presented.",
+  },
+  {
+    id: 3,
+    title: "Mitigasi Lingkungan",
+    titleEn: "Environmental Mitigation",
+    description:
+      "Presentasi komprehensif tentang strategi mitigasi dampak lingkungan di perkotaan. Mencakup analisis masalah, solusi berkelanjutan, dan rekomendasi kebijakan.",
+    descriptionEn:
+      "A comprehensive presentation on urban environmental impact mitigation strategies. Includes problem analysis, sustainable solutions, and policy recommendations.",
+    status: "completed",
+    tags: ["Environment", "Presentation", "Research"],
+    image:
+      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&h=400&fit=crop",
+    github: null,
+    demo: null,
+    note: "Presentasi kelompok untuk tugas mata pelajaran geografi.",
+    noteEn: "Group presentation for geography class assignment.",
+  },
+];
+
+export const certificatesData = [
+  {
+    id: 1,
+    title: "Google Cloud Arcade",
+    titleEn: "Google Cloud Arcade",
+    issuer: "Google Cloud",
+    date: "2025",
+    description:
+      "Penyelesaian berbagai quest, pembelajaran hands-on, dan pengumpulan skill badge dalam bidang Cloud Computing dan Artificial Intelligence di platform Google Cloud.",
+    descriptionEn:
+      "Completion of various quests, hands-on learning, and skill badge collection in Cloud Computing and Artificial Intelligence on the Google Cloud platform.",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    type: "course",
+  },
+  {
+    id: 2,
+    title: "Sertifikat Kursus Online",
+    titleEn: "Online Course Certificate",
+    issuer: "Dicoding / Coursera",
+    date: "2025",
+    description:
+      "Penyelesaian kursus pengenalan pemrograman dan dasar-dasar AI.",
+    descriptionEn:
+      "Completion of introductory programming and AI fundamentals course.",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
+    type: "course",
+  },
+];
 
 // ============================================================
 // TERJEMAHAN BAHASA
@@ -47,14 +135,14 @@ export const translations = {
       eyebrow: "TENTANG SAYA",
       title: "Siapa Bayu?",
       paragraphs: [
-        "Saya adalah Bayu Alfatir Aji Utomo, seorang pelajar aktif di SMAN 104 Jakarta yang memiliki ketertarikan mendalam pada dunia engineering dan teknologi. Sejak kecil, saya telah terpesona oleh bagaimana teknologi dapat mengubah cara hidup manusia.",
-        "Saat ini, saya sedang fokus mempelajari Artificial Intelligence dan Machine Learning. Saya percaya bahwa AI adalah kunci untuk memecahkan banyak masalah kompleks di masa depan — mulai dari kesehatan, pendidikan, hingga lingkungan.",
-        "Di luar akademik, saya senang bereksperimen dengan proyek-proyek teknis, membaca paper riset terbaru, dan berkolaborasi dengan teman-teman yang memiliki visi serupa.",
+        "Saya adalah Bayu Alfatir Aji Utomo, seorang pelajar aktif di SMAN 104 Jakarta yang memiliki ketertarikan mendalam pada dunia engineering dan teknologi. Saat ini, fokus dan cita-cita utama saya adalah menjadi seorang AI Engineer—yaitu profesi yang berfokus pada perancangan, pengembangan, dan implementasi algoritma kecerdasan buatan untuk memecahkan masalah kompleks serta mengotomatisasi sistem agar mampu belajar dan beradaptasi layaknya kognisi manusia.",
+        "Ketertarikan saya pada teknologi sudah dipupuk sejak kecil. Sekitar usia 6 tahun, saya cukup rutin berpartisipasi dalam berbagai workshop teknologi dasar. Di sana, saya mulai bereksperimen dengan hal-hal praktis seperti memprogram lampu LED (mengatur pola nyala, kombinasi warna, dan pewaktuan), hingga merakit mobil robot fungsional menggunakan bahan-bahan daur ulang.",
+        "Sayangnya, kegiatan eksplorasi hardware secara langsung tersebut terpaksa terhenti total saat pandemi COVID-19 melanda, di mana seluruh aktivitas mengharuskan saya untuk tetap berada di rumah. Meskipun hingga saat ini saya belum berkesempatan mengikuti workshop luring serupa kembali, masa pembatasan tersebut justru membuka jalan bagi saya untuk mengalihkan fokus eksplorasi ke ranah digital dan perangkat lunak (software), yang pada akhirnya mengantarkan saya pada ketertarikan yang sangat kuat terhadap Artificial Intelligence."
       ],
       stats: [
-        { label: "Proyek", value: "5+" },
-        { label: "Sertifikat", value: "3+" },
-        { label: "Tahun Belajar", value: "2+" },
+        { label: "Proyek", value: `${portfolioData.length}+` },
+        { label: "Sertifikat", value: `${certificatesData.length}+` },
+        { label: "Tahun Belajar", value: "10+" },
       ],
     },
     skills: {
@@ -75,7 +163,7 @@ export const translations = {
       eyebrow: "SERTIFIKAT",
       title: "Pencapaian & Sertifikat",
       description:
-        "Berbagai sertifikat dan piagam yang saya peroleh selama perjalanan belajar.",
+        "Berbagai sertifikat dan penghargaan teknis yang saya peroleh selama perjalanan belajar.",
     },
     contact: {
       eyebrow: "KONTAK",
@@ -110,14 +198,14 @@ export const translations = {
       eyebrow: "ABOUT ME",
       title: "Who is Bayu?",
       paragraphs: [
-        "I am Bayu Alfatir Aji Utomo, an active student at SMAN 104 Jakarta with a deep interest in engineering and technology. Since childhood, I have been fascinated by how technology can transform human life.",
-        "Currently, I am focusing on learning Artificial Intelligence and Machine Learning. I believe AI is the key to solving many complex problems in the future — from healthcare, education, to environmental issues.",
-        "Outside academics, I enjoy experimenting with technical projects, reading the latest research papers, and collaborating with friends who share similar visions.",
+        "I am Bayu Alfatir Aji Utomo, an active student at SMAN 104 Jakarta with a deep interest in engineering and technology. Currently, my main focus and career aspiration is to become an AI Engineer—a profession dedicated to designing, developing, and implementing artificial intelligence algorithms to solve complex problems and automate systems to learn and adapt like human cognition.",
+        "My fascination with technology has been nurtured since childhood. Around the age of 6, I regularly participated in various basic technology workshops. There, I began experimenting with practical applications such as programming LED lights (setting light patterns, color combinations, and timing) and assembling functional robot cars using recycled materials.",
+        "Unfortunately, this hands-on hardware exploration came to a complete halt during the COVID-19 pandemic, which required me to stay indoors. Although I haven't had the opportunity to attend similar offline workshops since then, the restrictions actually paved the way for me to shift my focus toward digital exploration and software development, ultimately leading to my strong passion for Artificial Intelligence."
       ],
       stats: [
-        { label: "Projects", value: "5+" },
-        { label: "Certificates", value: "3+" },
-        { label: "Years Learning", value: "2+" },
+        { label: "Projects", value: `${portfolioData.length}+` },
+        { label: "Certificates", value: `${certificatesData.length}+` },
+        { label: "Years Learning", value: "10+" },
       ],
     },
     skills: {
@@ -138,7 +226,7 @@ export const translations = {
       eyebrow: "CERTIFICATES",
       title: "Achievements & Certificates",
       description:
-        "Various certificates and awards I have earned during my learning journey.",
+        "Various technical certificates and awards I have earned during my learning journey.",
     },
     contact: {
       eyebrow: "CONTACT",
@@ -230,113 +318,6 @@ export const skillsData = [
     description:
       "Presentasi proyek dan komunikasi ide dengan percaya diri.",
     icon: "Mic",
-  },
-];
-
-// ============================================================
-// DATA PORTOFOLIO
-// Tambah/hapus proyek di sini sesuai kebutuhanmu
-// ============================================================
-export const portfolioData = [
-  {
-    id: 1,
-    title: "DompetKu",
-    titleEn: "DompetKu",
-    description:
-      "Aplikasi manajemen keuangan pribadi berbasis mobile. Membantu pengguna melacak pemasukan, pengeluaran, dan menyusun anggaran harian dengan antarmuka yang intuitif.",
-    descriptionEn:
-      "A personal finance management mobile application. Helps users track income, expenses, and plan daily budgets with an intuitive interface.",
-    status: "draft",
-    tags: ["React Native", "Firebase", "Mobile App"],
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
-    github: null,
-    demo: null,
-    note: "Aplikasi native yang masih dalam tahap pengembangan. Belum di-hosting.",
-    noteEn: "Native application still in development. Not yet hosted.",
-  },
-  {
-    id: 2,
-    title: "Laporan Reaksi Kimia",
-    titleEn: "Chemical Reaction Report",
-    description:
-      "Proyek akademik berupa laporan ilmiah mendalam tentang berbagai reaksi kimia organik dan anorganik. Disusun dengan format penelitian yang rapi dan referensi yang kuat.",
-    descriptionEn:
-      "An academic project in the form of an in-depth scientific report on various organic and inorganic chemical reactions. Compiled with neat research formatting and strong references.",
-    status: "completed",
-    tags: ["Chemistry", "Research", "Academic"],
-    image:
-      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
-    github: null,
-    demo: null,
-    note: "Proyek sekolah yang telah diselesaikan dan dipresentasikan.",
-    noteEn: "School project that has been completed and presented.",
-  },
-  {
-    id: 3,
-    title: "Mitigasi Lingkungan",
-    titleEn: "Environmental Mitigation",
-    description:
-      "Presentasi komprehensif tentang strategi mitigasi dampak lingkungan di perkotaan. Mencakup analisis masalah, solusi berkelanjutan, dan rekomendasi kebijakan.",
-    descriptionEn:
-      "A comprehensive presentation on urban environmental impact mitigation strategies. Includes problem analysis, sustainable solutions, and policy recommendations.",
-    status: "completed",
-    tags: ["Environment", "Presentation", "Research"],
-    image:
-      "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=600&h=400&fit=crop",
-    github: null,
-    demo: null,
-    note: "Presentasi kelompok untuk tugas mata pelajaran geografi.",
-    noteEn: "Group presentation for geography class assignment.",
-  },
-];
-
-// ============================================================
-// DATA SERTIFIKAT
-// Tambah/hapus sertifikat di sini sesuai kebutuhanmu
-// ============================================================
-export const certificatesData = [
-  {
-    id: 1,
-    title: "Sertifikat Peserta Olimpiade",
-    titleEn: "Olympiad Participant Certificate",
-    issuer: "SMAN 104 Jakarta",
-    date: "2025",
-    description:
-      "Peserta aktif dalam olimpiade sains tingkat sekolah.",
-    descriptionEn:
-      "Active participant in school-level science olympiad.",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop",
-    type: "academic",
-  },
-  {
-    id: 2,
-    title: "Sertifikat Keaktifan Organisasi",
-    titleEn: "Organization Activity Certificate",
-    issuer: "OSIS SMAN 104",
-    date: "2024",
-    description:
-      "Penghargaan atas kontribusi aktif dalam kegiatan organisasi siswa.",
-    descriptionEn:
-      "Award for active contribution in student organization activities.",
-    image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop",
-    type: "organization",
-  },
-  {
-    id: 3,
-    title: "Sertifikat Kursus Online",
-    titleEn: "Online Course Certificate",
-    issuer: "Dicoding / Coursera",
-    date: "2025",
-    description:
-      "Penyelesaian kursus pengenalan pemrograman dan dasar-dasar AI.",
-    descriptionEn:
-      "Completion of introductory programming and AI fundamentals course.",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
-    type: "course",
   },
 ];
 
