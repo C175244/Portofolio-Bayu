@@ -15,23 +15,23 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-nvidia-green text-nvidia-ink font-bold text-base leading-tight px-6 py-[11px] h-11 rounded-nvidia transition-colors hover:bg-nvidia-green-dark;
+    @apply inline-flex items-center justify-center bg-nvidia-green text-nvidia-ink font-bold text-base leading-tight px-6 py-[11px] h-11 rounded-nvidia transition-all duration-200 hover:bg-nvidia-green-dark active:scale-95;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center bg-transparent text-nvidia-ink font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border-2 border-nvidia-green transition-colors hover:bg-nvidia-green/10;
+    @apply inline-flex items-center justify-center bg-transparent text-nvidia-ink font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border-2 border-nvidia-green transition-all duration-200 hover:bg-nvidia-green/10 active:scale-95;
   }
 
   .btn-outline-dark {
-    @apply inline-flex items-center justify-center bg-transparent text-nvidia-on-dark font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border border-nvidia-on-dark transition-colors hover:bg-white/10;
+    @apply inline-flex items-center justify-center bg-transparent text-nvidia-on-dark font-bold text-base leading-tight px-[13px] py-[11px] h-11 rounded-nvidia border border-nvidia-on-dark transition-all duration-200 hover:bg-white/10 active:scale-95;
   }
 
   .card-nvidia {
-    @apply bg-nvidia-canvas border border-nvidia-hairline rounded-nvidia p-6 relative;
+    @apply bg-nvidia-canvas border border-nvidia-hairline rounded-nvidia p-6 relative transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 
   .card-nvidia-dark {
-    @apply bg-nvidia-surface-elevated border border-nvidia-hairline-strong rounded-nvidia p-6 relative;
+    @apply bg-nvidia-surface-elevated border border-nvidia-hairline-strong rounded-nvidia p-6 relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
 
   .corner-square {
@@ -45,7 +45,79 @@
   .container-nvidia {
     @apply max-w-[1280px] mx-auto;
   }
+
+  /* ===== ANIMASI SCROLL ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== HOVER & KLIK ===== */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    }
+  }
+
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  @media (hover: hover) {
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+  @media (hover: hover) {
+    .hover-glow:hover {
+      box-shadow: 0 0 15px rgba(118,185,0,0.2);
+    }
+  }
+
+  .img-zoom {
+    overflow: hidden;
+  }
+  .img-zoom img {
+    transition: transform 0.5s ease;
+  }
+  @media (hover: hover) {
+    .img-zoom:hover img {
+      transform: scale(1.06);
+    }
+  }
+
+  /* ===== STAGGER CHILDREN ===== */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 0.10s; }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 0.20s; }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; }
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 0.30s; }
+  .stagger-children.visible > *:nth-child(7) { transition-delay: 0.35s; }
+  .stagger-children.visible > *:nth-child(8) { transition-delay: 0.40s; }
+  .stagger-children.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @layer utilities {
   .text-glow-green {
     color: #9fe530;
