@@ -1,19 +1,24 @@
 import { useLanguage } from './LanguageContext';
 import { skillsData, translations } from './data';
 import * as Icons from 'lucide-react';
+import { useInView } from './hooks/useInView';
 
 export default function Skills() {
   const { lang } = useLanguage();
   const t = translations[lang].skills;
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
-  // Helper to get icon component by name
   const getIcon = (iconName) => {
     const IconComponent = Icons[iconName];
     return IconComponent ? <IconComponent size={24} /> : <Icons.Code2 size={24} />;
   };
 
   return (
-    <section id="skills" className="bg-nvidia-surface-soft section-padding">
+    <section
+      id="skills"
+      ref={ref}
+      className={`bg-nvidia-surface-soft section-padding fade-up ${inView ? 'visible' : ''}`}
+    >
       <div className="container-nvidia">
         {/* Section Header */}
         <div className="mb-12 text-center">
@@ -33,13 +38,16 @@ export default function Skills() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children visible">
           {skillsData.map((skill) => (
-            <div key={skill.id} className="card-nvidia p-6 group hover:border-nvidia-green transition-colors">
+            <div
+              key={skill.id}
+              className="card-nvidia p-6 group hover:border-nvidia-green transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
               <div className="corner-square top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 flex items-center justify-center text-nvidia-green">
+                <div className="w-10 h-10 flex items-center justify-center text-nvidia-green transition-transform duration-300 group-hover:scale-110">
                   {getIcon(skill.icon)}
                 </div>
                 <div>
@@ -59,7 +67,7 @@ export default function Skills() {
               <div className="flex items-center gap-2">
                 <div className="flex-1 h-1.5 bg-nvidia-surface-soft rounded-nvidia overflow-hidden">
                   <div
-                    className="h-full bg-nvidia-green rounded-nvidia transition-all duration-500"
+                    className="h-full bg-nvidia-green rounded-nvidia transition-all duration-700"
                     style={{
                       width:
                         skill.level === 'Beginner'
