@@ -16,7 +16,6 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100dvh] flex items-center bg-[#0a0a0a] overflow-hidden"
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
@@ -27,7 +26,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60" />
 
       <div className="container-nvidia relative z-10 px-6 lg:px-12 pt-28 pb-16 lg:pt-32 lg:pb-20 w-full">
@@ -35,7 +33,6 @@ export default function Hero() {
           
           {/* Left Content */}
           <div className="space-y-6">
-            {/* Eyebrow */}
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-nvidia-green" />
               <span className="text-nvidia-green text-sm font-bold uppercase tracking-wide">
@@ -43,7 +40,6 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Headline */}
             <div className="space-y-2">
               <p className="text-gray-300 text-xl lg:text-2xl font-normal">
                 {t.greeting}
@@ -56,12 +52,10 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Description */}
             <p className="text-gray-300 text-base leading-relaxed max-w-lg">
               {t.description}
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-wrap gap-4 pt-2">
               <button onClick={() => scrollToSection('portfolio')} className="btn-primary">
                 {t.ctaPrimary}
@@ -71,22 +65,11 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Social Quick Links */}
             <div className="flex items-center gap-4 pt-4">
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-nvidia-green transition-colors"
-              >
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors">
                 <Github size={22} />
               </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-nvidia-green transition-colors"
-              >
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors">
                 <Linkedin size={22} />
               </a>
               <div className="h-4 w-px bg-gray-600" />
@@ -99,15 +82,13 @@ export default function Hero() {
           {/* Right - Profile Photo */}
           <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative">
-              {/* Corner Squares */}
               <div className="absolute -top-2 -left-2 w-4 h-4 bg-nvidia-green z-10" />
               <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-nvidia-green z-10" />
 
-              {/* Photo Container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-700 shadow-xl">
-                {/* SRC GAMBAR DIUBAH KE /foto-profil.jpg */}
+                {/* INI YANG DIBENERIN (Pakai titik di depan) */}
                 <img
-                  src="/foto-profil.jpg"
+                  src="./foto-profil.jpg"
                   alt={profile.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {
