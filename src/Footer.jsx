@@ -27,7 +27,7 @@ export default function Footer() {
   const waNumber = profile.whatsapp.replace(/\+/g, '');
 
   return (
-    <footer className="bg-[#050505]">
+    <footer className="bg-nvidia-surface-dark">
       {/* Main Footer */}
       <div className="container-nvidia px-6 lg:px-12 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -35,23 +35,23 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 bg-nvidia-green" />
-              <h3 className="text-white text-xl font-bold">
+              <h3 className="text-nvidia-on-dark text-xl font-bold">
                 {profile.name}
               </h3>
             </div>
-            <p className="text-gray-400 text-[15px] leading-relaxed mb-4 max-w-md">
+            <p className="text-nvidia-on-dark-mute text-[15px] leading-relaxed mb-4 max-w-md">
               {lang === 'id'
                 ? `${profile.title} — Seorang pelajar yang passionate di bidang teknologi dan bercita-cita menjadi ${profile.careerFocus}.`
                 : `${profile.title} — A passionate student in technology aspiring to become an ${profile.careerFocus}.`}
             </p>
-            <p className="text-gray-500 text-sm">
+            <p className="text-nvidia-mute text-sm">
               {profile.location}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white text-base font-bold mb-4">
+            <h4 className="text-nvidia-on-dark text-base font-bold mb-4">
               {lang === 'id' ? 'Navigasi' : 'Navigation'}
             </h4>
             <ul className="space-y-2">
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className="text-gray-400 text-[15px] hover:text-nvidia-green transition-colors"
+                    className="text-nvidia-on-dark-mute text-[15px] hover:text-nvidia-green transition-colors"
                   >
                     {item.label}
                   </button>
@@ -70,14 +70,14 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white text-base font-bold mb-4">
+            <h4 className="text-nvidia-on-dark text-base font-bold mb-4">
               {lang === 'id' ? 'Kontak' : 'Contact'}
             </h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="text-gray-400 text-[15px] hover:text-nvidia-green transition-colors"
+                  className="text-nvidia-on-dark-mute text-[15px] hover:text-nvidia-green transition-colors"
                 >
                   {profile.email}
                 </a>
@@ -87,12 +87,12 @@ export default function Footer() {
                   href={`https://wa.me/${waNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 text-[15px] hover:text-nvidia-green transition-colors"
+                  className="text-nvidia-on-dark-mute text-[15px] hover:text-nvidia-green transition-colors"
                 >
                   {profile.whatsapp}
                 </a>
               </li>
-              <li className="text-gray-400 text-[15px]">
+              <li className="text-nvidia-on-dark-mute text-[15px]">
                 {profile.location}
               </li>
             </ul>
@@ -101,14 +101,29 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-nvidia-hairline-strong">
         <div className="container-nvidia px-6 lg:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wide">
+          <p className="text-nvidia-mute text-[10px] font-bold uppercase tracking-wide">
             {t.copyright}
           </p>
 
           <div className="flex items-center gap-4">
-            <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wide">
+            <p className="text-nvidia-mute text-[10px] font-bold uppercase tracking-wide">
+              {t.madeWith}
+            </p>
+            <button
+              onClick={scrollToTop}
+              className="w-10 h-10 flex items-center justify-center bg-nvidia-green text-nvidia-ink rounded-nvidia hover:bg-nvidia-green-dark transition-colors"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
               {t.madeWith}
             </p>
             <button
