@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden"
+      className="relative min-h-[100dvh] flex items-center bg-[#0a0a0a] overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -30,8 +30,10 @@ export default function Hero() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60" />
 
-      <div className="container-nvidia relative z-10 px-6 lg:px-12 py-32 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Padding disesuaikan agar tidak terlalu bolong di atas saat mode HP */}
+      <div className="container-nvidia relative z-10 px-6 lg:px-12 pt-28 pb-16 lg:pt-32 lg:pb-20 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          
           {/* Left Content */}
           <div className="space-y-6">
             {/* Eyebrow */}
@@ -44,7 +46,7 @@ export default function Hero() {
 
             {/* Headline */}
             <div className="space-y-2">
-              <p className="text-gray-400 text-xl lg:text-2xl font-normal">
+              <p className="text-gray-300 text-xl lg:text-2xl font-normal">
                 {t.greeting}
               </p>
               <h1 className="text-white text-4xl md:text-5xl lg:text-[48px] font-bold leading-[1.25]">
@@ -65,18 +67,18 @@ export default function Hero() {
               <button onClick={() => scrollToSection('portfolio')} className="btn-primary">
                 {t.ctaPrimary}
               </button>
-              <button onClick={() => scrollToSection('contact')} className="btn-outline-dark">
+              <button onClick={() => scrollToSection('contact')} className="btn-outline-dark border border-gray-600 hover:bg-gray-800 text-white">
                 {t.ctaSecondary}
               </button>
             </div>
 
-            {/* Social Quick Links */}
+            {/* Social Quick Links - Teks Diterangkan */}
             <div className="flex items-center gap-4 pt-4">
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-nvidia-green transition-colors"
+                className="text-gray-300 hover:text-nvidia-green transition-colors"
               >
                 <Github size={22} />
               </a>
@@ -84,26 +86,26 @@ export default function Hero() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-nvidia-green transition-colors"
+                className="text-gray-300 hover:text-nvidia-green transition-colors"
               >
                 <Linkedin size={22} />
               </a>
-              <div className="h-4 w-px bg-gray-700" />
-              <span className="text-gray-400 text-sm">
+              <div className="h-4 w-px bg-gray-600" />
+              <span className="text-gray-300 text-sm">
                 {profile.location}
               </span>
             </div>
           </div>
 
-          {/* Right - Profile Photo */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Right - Profile Photo (Ditengah untuk HP) */}
+          <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative">
               {/* Corner Squares */}
               <div className="absolute -top-2 -left-2 w-4 h-4 bg-nvidia-green z-10" />
               <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-nvidia-green z-10" />
 
               {/* Photo Container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-800">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-700 shadow-xl">
                 <img
                   src={profile.photoUrl}
                   alt={profile.name}
@@ -117,6 +119,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
