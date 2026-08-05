@@ -1,13 +1,19 @@
 import { useLanguage } from './LanguageContext';
 import { profile, translations } from './data';
 import { MapPin, GraduationCap, Target } from 'lucide-react';
+import { useInView } from './hooks/useInView';
 
 export default function About() {
   const { lang } = useLanguage();
   const t = translations[lang].about;
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   return (
-    <section id="about" className="bg-nvidia-canvas section-padding">
+    <section
+      id="about"
+      ref={ref}
+      className={`bg-nvidia-canvas section-padding fade-up ${inView ? 'visible' : ''}`}
+    >
       <div className="container-nvidia">
         {/* Section Header */}
         <div className="mb-12">
@@ -35,18 +41,18 @@ export default function About() {
             ))}
 
             {/* Info Cards */}
-            <div className="grid sm:grid-cols-3 gap-4 pt-4">
-              <div className="card-nvidia p-5">
+            <div className="grid sm:grid-cols-3 gap-4 pt-4 stagger-children visible">
+              <div className="card-nvidia p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <GraduationCap size={22} className="text-nvidia-green mb-3" />
                 <p className="text-nvidia-ink text-sm font-bold mb-1">Status</p>
                 <p className="text-nvidia-body text-sm">{profile.status}</p>
               </div>
-              <div className="card-nvidia p-5">
+              <div className="card-nvidia p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <MapPin size={22} className="text-nvidia-green mb-3" />
                 <p className="text-nvidia-ink text-sm font-bold mb-1">Lokasi</p>
                 <p className="text-nvidia-body text-sm">{profile.location}</p>
               </div>
-              <div className="card-nvidia p-5">
+              <div className="card-nvidia p-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <Target size={22} className="text-nvidia-green mb-3" />
                 <p className="text-nvidia-ink text-sm font-bold mb-1">Fokus</p>
                 <p className="text-nvidia-body text-sm">{profile.careerFocus}</p>
@@ -57,7 +63,7 @@ export default function About() {
           {/* Stats Sidebar */}
           <div className="space-y-4">
             {t.stats.map((stat, idx) => (
-              <div key={idx} className="card-nvidia p-6 text-center">
+              <div key={idx} className="card-nvidia p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div className="corner-square top-0 left-0" />
                 <p className="text-nvidia-green text-4xl font-bold mb-2">
                   {stat.value}
