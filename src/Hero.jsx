@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-nvidia-surface-dark overflow-hidden"
+      className="relative min-h-screen flex items-center bg-[#0a0a0a] overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -44,10 +44,10 @@ export default function Hero() {
 
             {/* Headline */}
             <div className="space-y-2">
-              <p className="text-nvidia-on-dark-mute text-xl lg:text-2xl font-normal">
+              <p className="text-gray-400 text-xl lg:text-2xl font-normal">
                 {t.greeting}
               </p>
-              <h1 className="text-nvidia-on-dark text-4xl md:text-5xl lg:text-[48px] font-bold leading-[1.25]">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-[48px] font-bold leading-[1.25]">
                 {profile.name}
               </h1>
               <p className="text-nvidia-green text-2xl md:text-3xl lg:text-[36px] font-bold leading-[1.25] text-glow-green">
@@ -76,7 +76,7 @@ export default function Hero() {
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-nvidia-on-dark-mute hover:text-nvidia-green transition-colors"
+                className="text-gray-400 hover:text-nvidia-green transition-colors"
               >
                 <Github size={22} />
               </a>
@@ -84,12 +84,12 @@ export default function Hero() {
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-nvidia-on-dark-mute hover:text-nvidia-green transition-colors"
+                className="text-gray-400 hover:text-nvidia-green transition-colors"
               >
                 <Linkedin size={22} />
               </a>
-              <div className="h-4 w-px bg-nvidia-hairline-strong" />
-              <span className="text-nvidia-on-dark-mute text-sm">
+              <div className="h-4 w-px bg-gray-700" />
+              <span className="text-gray-400 text-sm">
                 {profile.location}
               </span>
             </div>
@@ -103,12 +103,33 @@ export default function Hero() {
               <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-nvidia-green z-10" />
 
               {/* Photo Container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-nvidia-hairline-strong">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-800">
                 <img
                   src={profile.photoUrl}
                   alt={profile.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&size=400&background=76b900&color=000000&bold=true`;
+                  }}
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <button
+        onClick={() => scrollToSection('about')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-nvidia-green transition-colors animate-bounce"
+      >
+        <ArrowDown size={24} />
+      </button>
+    </section>
+  );
+}
                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&size=400&background=76b900&color=000000&bold=true`;
                   }}
                 />
