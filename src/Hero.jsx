@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
           {/* Left Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fade-up">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 bg-nvidia-green" />
               <span className="text-nvidia-green text-sm font-bold uppercase tracking-wide">
@@ -66,10 +66,10 @@ export default function Hero() {
             </div>
 
             <div className="flex items-center gap-4 pt-4">
-              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors">
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors hover:scale-110 transform duration-200">
                 <Github size={22} />
               </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors">
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-nvidia-green transition-colors hover:scale-110 transform duration-200">
                 <Linkedin size={22} />
               </a>
               <div className="h-4 w-px bg-gray-600" />
@@ -80,17 +80,16 @@ export default function Hero() {
           </div>
 
           {/* Right - Profile Photo */}
-          <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <div className="flex justify-center lg:justify-end mt-4 lg:mt-0 animate-fade-up animate-delay-200">
             <div className="relative">
               <div className="absolute -top-2 -left-2 w-4 h-4 bg-nvidia-green z-10" />
               <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-nvidia-green z-10" />
 
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-700 shadow-xl">
-                {/* INI YANG DIBENERIN (Pakai titik di depan) */}
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-700 shadow-xl hover:shadow-2xl transition-shadow duration-500">
                 <img
                   src="./foto-profil.jpg"
                   alt={profile.name}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
                   onError={(e) => {
                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&size=400&background=76b900&color=000000&bold=true`;
                   }}
