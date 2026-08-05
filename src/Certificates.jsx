@@ -1,10 +1,12 @@
 import { useLanguage } from './LanguageContext';
 import { certificatesData, translations } from './data';
 import { Award, Calendar, Building2 } from 'lucide-react';
+import { useInView } from './hooks/useInView';
 
 export default function Certificates() {
   const { lang } = useLanguage();
   const t = translations[lang].certificates;
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   const typeColors = {
     academic: 'bg-nvidia-accent-purple-pale text-nvidia-accent-purple-deep',
@@ -19,7 +21,11 @@ export default function Certificates() {
   };
 
   return (
-    <section id="certificates" className="bg-nvidia-surface-soft section-padding">
+    <section
+      id="certificates"
+      ref={ref}
+      className={`bg-nvidia-surface-soft section-padding fade-up ${inView ? 'visible' : ''}`}
+    >
       <div className="container-nvidia">
         {/* Section Header */}
         <div className="mb-12">
@@ -38,17 +44,20 @@ export default function Certificates() {
         </div>
 
         {/* Certificates Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children visible">
           {certificatesData.map((cert) => (
-            <div key={cert.id} className="card-nvidia overflow-hidden group">
+            <div
+              key={cert.id}
+              className="card-nvidia overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
               <div className="corner-square bottom-0 right-0" />
 
               {/* Image */}
-              <div className="relative h-40 overflow-hidden -mx-6 -mt-6 mb-4">
+              <div className="relative h-40 overflow-hidden -mx-6 -mt-6 mb-4 img-zoom">
                 <img
                   src={cert.image}
                   alt={lang === 'id' ? cert.title : cert.titleEn}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
