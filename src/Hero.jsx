@@ -30,7 +30,6 @@ export default function Hero() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60" />
 
-      {/* Padding disesuaikan agar tidak terlalu bolong di atas saat mode HP */}
       <div className="container-nvidia relative z-10 px-6 lg:px-12 pt-28 pb-16 lg:pt-32 lg:pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           
@@ -72,7 +71,7 @@ export default function Hero() {
               </button>
             </div>
 
-            {/* Social Quick Links - Teks Diterangkan */}
+            {/* Social Quick Links */}
             <div className="flex items-center gap-4 pt-4">
               <a
                 href={profile.github}
@@ -97,7 +96,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right - Profile Photo (Ditengah untuk HP) */}
+          {/* Right - Profile Photo */}
           <div className="flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative">
               {/* Corner Squares */}
@@ -106,15 +105,15 @@ export default function Hero() {
 
               {/* Photo Container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-nvidia overflow-hidden border-2 border-gray-700 shadow-xl">
+                {/* SRC GAMBAR DIUBAH KE /foto-profil.jpg */}
                 <img
-                  src={profile.photoUrl}
+                  src="/foto-profil.jpg"
                   alt={profile.name}
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {
                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&size=400&background=76b900&color=000000&bold=true`;
                   }}
                 />
-                {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
             </div>
@@ -123,7 +122,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <button
         onClick={() => scrollToSection('about')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 hover:text-nvidia-green transition-colors animate-bounce"
