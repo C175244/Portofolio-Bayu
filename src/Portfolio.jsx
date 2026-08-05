@@ -1,13 +1,19 @@
 import { useLanguage } from './LanguageContext';
 import { portfolioData, translations } from './data';
 import { ExternalLink, Github, AlertCircle } from 'lucide-react';
+import { useInView } from './hooks/useInView';
 
 export default function Portfolio() {
   const { lang } = useLanguage();
   const t = translations[lang].portfolio;
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   return (
-    <section id="portfolio" className="bg-nvidia-canvas section-padding">
+    <section
+      id="portfolio"
+      ref={ref}
+      className={`bg-nvidia-canvas section-padding fade-up ${inView ? 'visible' : ''}`}
+    >
       <div className="container-nvidia">
         {/* Section Header */}
         <div className="mb-12">
@@ -26,17 +32,20 @@ export default function Portfolio() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children visible">
           {portfolioData.map((project) => (
-            <div key={project.id} className="card-nvidia overflow-hidden group">
+            <div
+              key={project.id}
+              className="card-nvidia overflow-hidden group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
               <div className="corner-square top-0 left-0" />
 
               {/* Image */}
-              <div className="relative h-48 overflow-hidden -mx-6 -mt-6 mb-4">
+              <div className="relative h-48 overflow-hidden -mx-6 -mt-6 mb-4 img-zoom">
                 <img
                   src={project.image}
                   alt={lang === 'id' ? project.title : project.titleEn}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
