@@ -60,25 +60,35 @@ export default function Contact() {
           </div>
 
           {/* Social Links Grid */}
-          <h3 className="text-nvidia-ink text-lg font-bold mb-6 text-center">
-            {t.connectTitle}
-          </h3>
+<h3 className="text-nvidia-ink text-lg font-bold mb-6 text-center">
+  {t.connectTitle}
+</h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-nvidia p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors"
-              >
-                <div
-                  className="w-10 h-10 flex items-center justify-center rounded-nvidia text-white transition-transform group-hover:scale-110 flex-shrink-0"
-                  style={{ backgroundColor: social.color }}
-                >
-                  {getIcon(social.icon)}
-                </div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+  {socialLinks.map((social) => (
+    <a
+      key={social.id}
+      href={social.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card-nvidia p-5 flex items-center gap-4 group hover:border-nvidia-green transition-colors"
+    >
+      <div
+        className="w-10 h-10 flex items-center justify-center rounded-nvidia text-white transition-transform group-hover:scale-110 shrink-0"
+        style={{ backgroundColor: social.color }}
+      >
+        {getIcon(social.icon)}
+      </div>
+      <div className="min-w-0">
+        <p className="text-nvidia-ink text-sm font-bold">{social.name}</p>
+        <p className="text-nvidia-mute text-xs truncate">
+          {social.id === 'email' ? profile.email : social.url.replace('https://', '')}
+        </p>
+      </div>
+    </a>
+  ))}
+</div>
+
                 {/* Bagian teks yang dirapikan */}
                 <div className="min-w-0">
                   <p className="text-nvidia-ink text-sm font-bold truncate">{social.name}</p>
